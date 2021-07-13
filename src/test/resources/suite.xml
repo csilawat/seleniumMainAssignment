@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestExecution" parallel="classes" thread-count="3">
+    <listeners>
+        <listener class-name="base.Listener"></listener>
+    </listeners>
+
+    <test name="TestExecution">
+        <classes>
+            <class name="com.qa.Ecommerce.PlaceOrderTest"></class>
+            <class name="com.qa.Ecommerce.MoisturizersPageTest"></class>
+            <class name="com.qa.Ecommerce.SunscreensPageTest"></class>
+        </classes>
+    </test>
+
+</suite>
