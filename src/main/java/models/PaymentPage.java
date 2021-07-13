@@ -97,6 +97,7 @@ public class PaymentPage extends BasePage {
 
         elementWait(paymentSuccess);
         elementWait(paymentSuccessMessage);
+        takeScreenSHots("paymentSuccess");
 
     }
 
