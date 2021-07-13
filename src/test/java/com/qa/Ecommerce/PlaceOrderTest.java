@@ -13,22 +13,22 @@ import static org.hamcrest.Matchers.*;
 
 public class PlaceOrderTest extends BaseTest {
 
-    String buyMoisturizersInstruction = "Add two moisturizers to your cart. First, select the least expensive mositurizer that contains Aloe. For your second moisturizer, select the least expensive moisturizer that contains almond. Click on cart when you are done.";
-    String buySunscreensInstruction = "Add two sunscreens to your cart. First, select the least expensive sunscreen that is SPF-50. For your second sunscreen, select the least expensive sunscreen that is SPF-30. Click on the cart when you are done.";
-    String homePageScreen = "homePage";
-    String moisturizersPageScreen = "moisturizersPage";
-    String sunscreensPageScreen = "sunscreensPage";
-    String buyMoisturizersInstructionScreen = "buyMoisturizersInstruction";
-    String buySunscreensInstructionScreen = "buyMoisturizersInstruction";
-    String aloeMoisturizers = "Aloe";
-    String almondMoisturizers = "Almond";
-    String SPF50Sunscreens = "SPF-50";
-    String SPF30Sunscreens = "SPF-30";
-    String cartScreen = "cart";
-    Logger log = Logger.getLogger(PlaceOrderTest.class);
+    private String buyMoisturizersInstruction = "Add two moisturizers to your cart. First, select the least expensive mositurizer that contains Aloe. For your second moisturizer, select the least expensive moisturizer that contains almond. Click on cart when you are done.";
+    private String buySunscreensInstruction = "Add two sunscreens to your cart. First, select the least expensive sunscreen that is SPF-50. For your second sunscreen, select the least expensive sunscreen that is SPF-30. Click on the cart when you are done.";
+    private String homePageScreen = "homePage";
+    private String moisturizersPageScreen = "moisturizersPage";
+    private String sunscreensPageScreen = "sunscreensPage";
+    private String buyMoisturizersInstructionScreen = "buyMoisturizersInstruction";
+    private String buySunscreensInstructionScreen = "buyMoisturizersInstruction";
+    private String aloeMoisturizers = "Aloe";
+    private String almondMoisturizers = "Almond";
+    private String SPF50Sunscreens = "SPF-50";
+    private String SPF30Sunscreens = "SPF-30";
+    private String cartScreen = "cart";
+    private Logger log = Logger.getLogger(PlaceOrderTest.class);
 
     @Test
-    public void verifyBuyProductInstructionsTest() throws InterruptedException {
+    public void verifyBuyProductInstructionsTest() throws Exception {
 
         int temperature = 0;
         HomePage homePage = new HomePage(driver);
@@ -55,7 +55,7 @@ public class PlaceOrderTest extends BaseTest {
             itemsInCart = buyMoisturizers();
         }
 
-        if ((itemsInCart!=null)) {
+        if ((itemsInCart != null)) {
             List<Object> productNameAndPriceInCart = cartPage.verifyItemsInCart((itemsInCart));
 
             String firstItemInCart = cartPage.getFirstItemInCart().getText();
@@ -75,8 +75,7 @@ public class PlaceOrderTest extends BaseTest {
 
             log.info("----" + paymentPage.getPaymentSuccessMessage().getText() + "----------");
 
-        }
-        else {
+        } else {
             log.info("............Your cart is Empty....................");
             throw new NullPointerException("******************  Your cart is Empty, please add item in your cart**************************");
         }
@@ -140,8 +139,7 @@ public class PlaceOrderTest extends BaseTest {
 
     }
 
-    public void payment() throws InterruptedException {
-
+    public void payment() throws Exception {
 
         Thread.sleep(3000);
         PaymentPage paymentPage = new PaymentPage(driver);

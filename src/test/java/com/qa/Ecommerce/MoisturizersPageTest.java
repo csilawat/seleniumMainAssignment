@@ -7,11 +7,14 @@ import org.testng.annotations.Test;
 
 public class MoisturizersPageTest extends BaseTest {
 
-    Logger log = Logger.getLogger(MoisturizersPageTest.class);
+    private Logger log = Logger.getLogger(MoisturizersPageTest.class);
+
     @Test
-    public void runParallelTest() {
+    public void runParallelTest() throws InterruptedException {
 
         log.info("---------MoisturizersPageTest started -----------------");
-        System.out.println(" MoisturizersPageTest"+"******************");
+
+        Thread.sleep(10000);
+        System.out.println(" MoisturizersPageTest" + "******************");
     }
 }

@@ -38,8 +38,7 @@ public class PaymentPage extends BasePage {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement payButton;
 
-
-    @FindBy(xpath = "//h2[contains(text(),'PAYMENT SUCCESS')]")
+    @FindBy(xpath = "//h2[contains(text(),'PAYMENT')]")
     private WebElement paymentSuccess;
 
     @FindBy(xpath = " //p[@class='text-justify']")
@@ -58,7 +57,7 @@ public class PaymentPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void finalPayment() throws InterruptedException {
+    public void finalPayment() throws Exception {
 
         log.info("---- Click on pay button and starting payment -------");
 
@@ -91,13 +90,19 @@ public class PaymentPage extends BasePage {
 
     }
 
-    public void paymentSuccessInformation() {
+    public void paymentSuccessInformation() throws Exception {
 
         log.info("---- Payment success Information -------");
 
         elementWait(paymentSuccess);
         elementWait(paymentSuccessMessage);
         takeScreenSHots("paymentSuccess");
+        if (!(paymentSuccess.getText().equals("PAYMENT SUCCESS"))) {
+
+            log.info("---your payment has been Failed please try after some time---");
+            System.out.println("*************PAYMENT FAILED *****************************************");
+            throw new Exception("your payment has been Failed, after putting customer payment details");
+        }
 
     }
 

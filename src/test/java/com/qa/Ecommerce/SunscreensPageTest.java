@@ -6,12 +6,15 @@ import org.testng.annotations.Test;
 
 public class SunscreensPageTest extends BaseTest {
 
-    Logger log = Logger.getLogger(SunscreensPageTest.class);
+    private Logger log = Logger.getLogger(SunscreensPageTest.class);
+
     @Test
-    public void runParallelTest() {
+    public void runParallelTest() throws InterruptedException {
 
         log.info("---------SunscreensPageTest started -----------------");
-        System.out.println("SunscreensPageTest"+" **************");
+
+        Thread.sleep(10000);
+        System.out.println("SunscreensPageTest" + " **************");
     }
 
 }

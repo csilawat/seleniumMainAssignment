@@ -18,7 +18,7 @@ public class BaseTest {
     Logger logger = Logger.getLogger(BaseTest.class);
 
 
-    @BeforeSuite
+    @BeforeMethod
     public void beforeTest() {
         logger.info("*********************************************************************************");
         logger.info("...........................Booking order Started ..............................");
@@ -32,7 +32,7 @@ public class BaseTest {
 
     }
 
-    @AfterSuite
+    @AfterMethod
     public void afterTest() {
         logger.info("*********************************************************************************");
         logger.info("...........................Booking order Completed ..............................");
