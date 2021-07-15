@@ -26,12 +26,6 @@ public class MoisturizersPage extends BasePage {
     @FindBy(xpath = "//div[@class='popover-body']")
     private WebElement moisturizersInstruction;
 
-    @FindBy(xpath = "//button[@onclick=\"addToCart('Vassily Aloe Attack',199)\"]")
-    private WebElement leastExpensiveMoisturizersContainsAloe;
-
-    @FindBy(xpath = "//button[@onclick=\"addToCart('Boris Almond and Honey',128)\"]")
-    private WebElement leastExpensiveMoisturizersContainsAlmond;
-
     Logger log = Logger.getLogger(MoisturizersPage.class);
     private Map<Object, Object> addedProductInCart = new HashMap<Object, Object>();
 
